@@ -115,6 +115,7 @@ section {
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .banner p {
@@ -138,6 +139,7 @@ section {
     text-decoration: none;
     display: inline-block;
     border: 2px solid #d4af37;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
@@ -165,6 +167,7 @@ section {
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .about-image {
@@ -191,6 +194,8 @@ section {
 .services h2 {
     text-align: center;
     margin-bottom: 50px;
+    color: #333;
+    font-size: 2.5rem;
 }
 
 .services-grid {
@@ -224,6 +229,7 @@ section {
     font-size: 1rem;
     margin-bottom: 20px;
     flex-grow: 1;
+    line-height: 1.7;
 }
 
 .service-button {
@@ -236,6 +242,8 @@ section {
     font-weight: 500;
     transition: background-color 0.3s;
     text-align: center;
+    border: none;
+    cursor: pointer;
 }
 
 .service-button:hover {
@@ -247,6 +255,7 @@ section {
     text-align: center;
     margin-bottom: 30px;
     color: #d4af37;
+    font-size: 2.5rem;
 }
 
 .service-content {
@@ -259,6 +268,7 @@ section {
 .service-description h3 {
     color: #d4af37;
     margin: 20px 0 10px 0;
+    font-size: 1.5rem;
 }
 
 .service-description ul {
@@ -268,6 +278,7 @@ section {
 
 .service-description li {
     margin-bottom: 10px;
+    line-height: 1.7;
 }
 
 .service-images {
@@ -279,7 +290,7 @@ section {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -291,7 +302,7 @@ section {
 
 .image-item img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -300,17 +311,26 @@ section {
     transform: scale(1.05);
 }
 
+.image-caption {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    font-weight: 500;
+    color: #333;
+}
+
 .cta-section {
     text-align: center;
     background-color: #f8f9fa;
-    padding: 40px;
+    padding: 50px;
     border-radius: 10px;
     margin-top: 30px;
 }
 
 .cta-section h3 {
     color: #d4af37;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
 }
 
 /* Contact section */
@@ -327,11 +347,13 @@ section {
 .contact-info h3 {
     color: #d4af37;
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .contact-info p {
     margin-bottom: 10px;
     font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .contact-form {
@@ -347,6 +369,13 @@ section {
     border-radius: 5px;
     font-size: 1rem;
     font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d4af37;
+    outline: none;
 }
 
 .contact-form button {
@@ -426,6 +455,10 @@ footer {
     
     .service-detail h2 {
         font-size: 1.8rem;
+    }
+    
+    .image-item img {
+        height: 200px;
     }
 }
 
