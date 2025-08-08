@@ -503,6 +503,7 @@ footer {
         transition: transform 0.5s ease-in;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         padding-top: 20px;
+        z-index: 1000;
     }
     
     .nav-links li {
@@ -511,6 +512,7 @@ footer {
     
     .burger {
         display: block;
+        z-index: 1001;
     }
     
     .about-content {
@@ -526,12 +528,13 @@ footer {
     }
     
     .banner {
-        padding: 120px 0;
+        padding: 100px 0;
     }
     
     .services-grid,
     .service-content {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
     
     .image-grid {
@@ -556,7 +559,7 @@ footer {
     }
     
     .service-button {
-        padding: 10px 20px;
+        padding: 12px 20px;
         font-size: 0.9rem;
     }
     
@@ -566,10 +569,54 @@ footer {
     
     .service-card {
         padding: 30px 20px;
+        margin-bottom: 15px;
     }
     
     .service-card h3 {
         font-size: 1.4rem;
+    }
+    
+    /* Mobile-specific improvements */
+    .container {
+        padding: 0 15px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .banner-content {
+        padding: 0 15px;
+    }
+    
+    .banner p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    .services {
+        padding: 80px 0;
+    }
+    
+    .contact {
+        padding: 80px 0;
+    }
+    
+    .contact-form {
+        gap: 20px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px;
+    }
+    
+    .placeholder-image {
+        height: 250px;
     }
 }
 
