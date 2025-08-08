@@ -21,11 +21,12 @@ body {
 /* Header styles */
 header {
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 header .container {
@@ -33,6 +34,11 @@ header .container {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
 }
 
 .logo {
@@ -47,19 +53,36 @@ header .container {
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
     font-size: 1.1rem;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    transition: width 0.3s;
 }
 
 .nav-links a:hover {
     color: #d4af37;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .burger {
@@ -81,7 +104,7 @@ main {
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .banner {
@@ -101,7 +124,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .banner-content {
@@ -109,28 +132,31 @@ section {
     z-index: 1;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .banner h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
 
 .banner p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 500;
 }
 
 .cta-button {
     background-color: #d4af37;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 35px;
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 50px;
@@ -140,34 +166,46 @@ section {
     display: inline-block;
     border: 2px solid #d4af37;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cta-button:hover {
     background-color: transparent;
     color: #d4af37;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
 /* About section */
 .about {
     background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
 }
 
 .about-text {
     flex: 1;
 }
 
+.about-text h2 {
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
 .about-text p {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 1.1rem;
     line-height: 1.8;
+    color: #555;
 }
 
 .about-image {
@@ -177,59 +215,76 @@ section {
 
 .placeholder-image {
     background-color: #e9ecef;
-    height: 300px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 1.2rem;
     color: #6c757d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Services section */
 .services {
     background-color: #f8f9fa;
+    padding: 120px 0;
 }
 
 .services h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     color: #333;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    position: relative;
+}
+
+.services h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #d4af37;
+    margin: 15px auto;
+    border-radius: 2px;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .service-card {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     border-top: 5px solid #d4af37;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .service-card h3 {
     color: #d4af37;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .service-card p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
     flex-grow: 1;
     line-height: 1.7;
+    color: #555;
 }
 
 .service-button {
@@ -237,17 +292,24 @@ section {
     background-color: #d4af37;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
     text-align: center;
-    border: none;
+    border: 2px solid #d4af37;
     cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .service-button:hover {
-    background-color: #b8860b;
+    background-color: transparent;
+    color: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* Service detail pages */
@@ -336,46 +398,62 @@ section {
 /* Contact section */
 .contact {
     background-color: #f8f9fa;
+    padding: 120px 0;
 }
 
 .contact-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+    gap: 60px;
 }
 
 .contact-info h3 {
     color: #d4af37;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #d4af37;
 }
 
 .contact-info p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 1.1rem;
     line-height: 1.7;
+    color: #555;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
+    padding: 15px 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+    background-color: #fff;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #d4af37;
     outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
 }
 
 .contact-form button {
@@ -385,21 +463,28 @@ section {
     padding: 15px;
     font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
 }
 
 .contact-form button:hover {
     background-color: #b8860b;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(212, 175, 55, 0.4);
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #222;
+    color: #ddd;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
+    font-size: 1.1rem;
+    border-top: 1px solid #444;
 }
 
 /* Responsive design */
@@ -413,7 +498,7 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 100%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -437,11 +522,11 @@ footer {
     }
     
     .banner h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .banner {
-        padding: 100px 0;
+        padding: 120px 0;
     }
     
     .services-grid,
@@ -454,11 +539,37 @@ footer {
     }
     
     .service-detail h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .image-item img {
         height: 200px;
+    }
+    
+    .about-text h2 {
+        text-align: center;
+    }
+    
+    .cta-button {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+    
+    .service-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .services h2 {
+        font-size: 2.2rem;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.4rem;
     }
 }
 
